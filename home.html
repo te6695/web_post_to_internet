@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology</title>
+    <style>
+        /* Existing styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            display: inline-block;
+        }
+        nav .dropdown {
+            display: inline-block;
+            position: relative;
+        }
+        nav .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            min-width: 150px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+        nav .dropdown-content a {
+            color: #333;
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+        }
+        nav .dropdown-content a:hover {
+            background-color: #f4f4f4;
+        }
+        nav .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        main {
+            padding: 0; /* Remove padding to ensure full screen */
+            margin: 0; /* Remove margin to ensure full screen */
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .content {
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+            background: none; /* Remove background color */
+        }
+        iframe {
+            width: 100%;
+            height: auto;
+        }
+        /* Login and Signup Forms */
+        #login-form, #signup-form {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            width: 300px;
+        }
+        #login-form h2, #signup-form h2 {
+            margin-top: 0;
+        }
+        #login-form label, #signup-form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        #login-form input, #signup-form input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        #login-form button, #signup-form button {
+            width: 100%;
+            padding: 10px;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #login-form button:hover, #signup-form button:hover {
+            background: #555;
+        }
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        nav form {
+            display: inline-block;
+            margin-left: 15px;
+        }
+        .image {
+            display: block;
+            width: 100vw; /* Full viewport width */
+            height: 100vh; /* Full viewport height */
+            object-fit: cover; /* Ensure the image covers the entire area */
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    
+</head>
+<body>
+    <header>
+        <h1>Technology</h1>
+    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact Us</a>
+        <div class="dropdown">
+            <a href="#">Courses</a>
+            <div class="dropdown-content">
+                <a href="java.html">Java</a>
+                <a href="cpp.html">C++</a>
+                <a href="python.html">Python</a>
+                <a href="html.html">HTML</a>
+                <a href="css.html">CSS</a>
+                <a href="javascript.html">JavaScript</a>
+            </div>
+        </div>
+        <a href="#" id="login-link">Login</a>
+        <a href="#" id="signup-link">Signup</a>
+        <form role="search" id="form">
+            <input type="search" id="query" name="q" placeholder="search">
+        </form>
+    </nav>
+
+    <main>
+        <div id="home" class="content">
+            <img class="image" src="imgres (2).png" alt="Description of Image">
+        </div>
+    </main>
+
+    <!-- Login Form -->
+    <div id="overlay"></div>
+    <div id="login-form">
+        <h2>Login</h2>
+        <form method="POST" action="home.php">
+            <input type="hidden" name="action" value="login"> <!-- or "signup" for signup form -->
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- Signup Form -->
+    <div id="signup-form">
+        <h2>Signup</h2>
+        <form>
+            <label for="signup-username">New Username:</label>
+            <input type="text" id="signup-username" name="username" required>
+            <label for="signup-password">New Password:</label>
+            <input type="password" id="signup-password" name="password" required>
+            <button type="submit">Create Account</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Technology Website. All rights reserved.</p>
+    </footer>
+    <script src="home.js"></script>
+</body>
+</html>
